@@ -1,9 +1,7 @@
 //your parameter variables go here!
-let rect_width  = 20;
-let rect_height = 60;
-let shape_Size  = 50;
-let shape_X     = 50;
-let shape_Y     = 50;
+let w    = 200;
+let h    = 200;
+
 
 function setup_wallpaper(pWallpaper) {
   pWallpaper.output_mode(DEVELOP_GLYPH);
@@ -20,20 +18,33 @@ function setup_wallpaper(pWallpaper) {
 }
 
 function wallpaper_background() {
-  background(141, 154, 155); //light honeydew green colour
+  background(164, 214, 227); //light honeydew green colour
 }
 
 function my_symbol() { // do not rename this function. Treat this similarly to a Draw function
-// noStroke()
-// bezier(0,100,50,0,150,200,200,100)
-// fill(0)
-// bezier(100,0,0,50,200,150,100,200)
+//sea wave
+stroke(255)
+noFill()
 
-// fill(0)
-// ellipse(150,50,50,50)
+// 1st line (y = h/6)
+  bezier(w*0.025, h/6, w*0.11, h/6-10, w*0.19, h/6+10, w*0.3, h/6);
+  bezier(w*0.35, h/6, w*0.46, h/6-10, w*0.54, h/6+10, w*0.65, h/6);
+  bezier(w*0.7, h/6, w*0.81, h/6-10, w*0.89, h/6+10, w*0.995, h/6);
 
-// fill(255)
-// ellipse(50,150,50,50)
+  // 2nd line (y = h/2)
+  bezier(w*0.025, h/2, w*0.11, h/2-10, w*0.19, h/2+10, w*0.3, h/2);
+  bezier(w*0.35, h/2, w*0.46, h/2-10, w*0.54, h/2+10, w*0.65, h/2);
+  bezier(w*0.7, h/2, w*0.81, h/2-10, w*0.89, h/2+10, w*0.995, h/2);
 
+  // 3rd line (y = 5h/6)
+  bezier(w*0.025, 5*h/6, w*0.11, 5*h/6-10, w*0.19, 5*h/6+10, w*0.3, 5*h/6);
+  bezier(w*0.35, 5*h/6, w*0.46, 5*h/6-10, w*0.54, 5*h/6+10, w*0.65, 5*h/6);
+  bezier(w*0.7, 5*h/6, w*0.81, 5*h/6-10, w*0.89, 5*h/6+10, w*0.995, 5*h/6);
 
+  //dolphin
+  
+
+  
 }
+
+
