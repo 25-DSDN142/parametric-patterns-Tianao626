@@ -26,7 +26,7 @@ function my_symbol() { // do not rename this function. Treat this similarly to a
   //sea wave
   stroke(255)
   noFill()
-// 1st line (y = h/6)
+ // 1st line (y = h/6)
   bezier(w*0.025, h/6, w*0.11, h/6-10, w*0.19, h/6+10, w*0.3, h/6);
   bezier(w*0.35, h/6, w*0.46, h/6-10, w*0.54, h/6+10, w*0.65, h/6);
   bezier(w*0.7, h/6, w*0.81, h/6-10, w*0.89, h/6+10, w*0.995, h/6);
