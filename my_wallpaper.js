@@ -4,12 +4,13 @@ let h    = 200;
 let boat_x =120;
 let boat_y =140;
 let Size   =100;
-
-
+let bird_x= 100;
+let bird_y= 100;
+let bird_Size= 2;
 
 function setup_wallpaper(pWallpaper) {
   pWallpaper.output_mode(DEVELOP_GLYPH);
-  pWallpaper.output_mode(GRID_WALLPAPER);
+  //pWallpaper.output_mode(GRID_WALLPAPER);
   //pWallpaper.output_mode(GLIDE_WALLPAPER);
 
   pWallpaper.resolution(NINE_PORTRAIT);
@@ -22,13 +23,13 @@ function setup_wallpaper(pWallpaper) {
 }
 
 function wallpaper_background() {
-  background(0, 0, 102); //light honeydew green colour
+  background(102, 179, 255); 
 }
 
 function my_symbol() { // do not rename this function. Treat this similarly to a Draw function
 
   //sea wave
-  stroke(0, 0, 204)
+  stroke(255)
   noFill()
  // 1st line (y = h/6)
   bezier(w*0.025, h/6, w*0.11, h/6-10, w*0.19, h/6+10, w*0.3, h/6);
@@ -45,19 +46,25 @@ function my_symbol() { // do not rename this function. Treat this similarly to a
   
   
    
-    draw_boat(130,160,80);
+    
     draw_boat(10,80,100);
-    draw_boat(90,40,70);
+    draw_boat(120,40,80);
     draw_boat(40,150,70); 
- 
-  
+    draw_boat(140,160,40); 
+    
+    draw_bird(160,130);
+    draw_bird(50,10);
+    draw_bird(30,40);
+    draw_bird(60,120);
+    draw_bird(180,200);
+    draw_bird(190,10);
 }
-  function draw_boat(boat_x, boat_y, Size){ 
+function draw_boat(boat_x, boat_y, Size){ 
   //boat
   noStroke()
   // The bottom of the hull
   if(Size <80){
-  fill(0, 122, 204); 
+    fill(0, 122, 204); 
   }
   if(Size>=80){
     fill(255, 77, 77);
@@ -129,5 +136,13 @@ function my_symbol() { // do not rename this function. Treat this similarly to a
   ellipse(boat_x+Size/12*9, boat_y-Size/16*11, Size/6, Size/8);
 
 }
-
-
+//sea gull 
+function draw_bird(bird_x,bird_y){
+  stroke(255);
+  noFill();
+  strokeWeight(1);
+  // Left wing
+  bezier(bird_x,bird_y,bird_x-bird_Size,bird_y-bird_Size,bird_x-bird_Size* 2,bird_y,bird_x-bird_Size* 3,bird_y-bird_Size);
+  // Right wing
+  bezier(bird_x,bird_y,bird_x+bird_Size,bird_y-bird_Size,bird_x+bird_Size* 2,bird_y,bird_x+bird_Size* 3,bird_y-bird_Size);
+ }
