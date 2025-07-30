@@ -11,9 +11,9 @@ let bird_Size= 2;
 function setup_wallpaper(pWallpaper) {
   pWallpaper.output_mode(DEVELOP_GLYPH);
   //pWallpaper.output_mode(GRID_WALLPAPER);
-  //pWallpaper.output_mode(GLIDE_WALLPAPER);
+  pWallpaper.output_mode(GLIDE_WALLPAPER);
 
-  pWallpaper.resolution(NINE_PORTRAIT);
+  pWallpaper.resolution( NINE_PORTRAIT);
   pWallpaper.show_guide(false); //set this to false when you're ready to print
 
   //Grid settings
@@ -43,22 +43,27 @@ function my_symbol() { // do not rename this function. Treat this similarly to a
   bezier(w*0.025, 5*h/6, w*0.11, 5*h/6-10, w*0.19, 5*h/6+10, w*0.3, 5*h/6);
   bezier(w*0.35, 5*h/6, w*0.46, 5*h/6-10, w*0.54, 5*h/6+10, w*0.65, 5*h/6);
   bezier(w*0.7, 5*h/6, w*0.81, 5*h/6-10, w*0.89, 5*h/6+10, w*0.995, 5*h/6);
-  
-  
-   
-    
+   //sea wave
+    noStroke();
+    fill(0, 0, 179);
+    bezier(0,h/2,w/2,h/4,w/2,h-h/4,w,h/2);
+    bezier(0,h,w/2,h/2+h/4,w/2,h+h/4,w,h);
+
+    //4 boats
     draw_boat(10,80,100);
     draw_boat(120,40,80);
     draw_boat(40,150,70); 
     draw_boat(140,160,40); 
-    
+    //6 sea gulls
     draw_bird(160,130);
     draw_bird(50,10);
     draw_bird(30,40);
     draw_bird(60,120);
     draw_bird(180,200);
     draw_bird(190,10);
+  
 }
+
 function draw_boat(boat_x, boat_y, Size){ 
   //boat
   noStroke()
